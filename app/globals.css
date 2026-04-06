@@ -1,26 +1,165 @@
 @import "tailwindcss";
 
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+  --background: #D9D9D9;
+  --foreground: #2D2A4A;
+  --muted: #6B6780;
+  --muted-light: #9A9A9A;
+  --card: #F5F5F5;
+  --card-hover: #FFFFFF;
 }
 
 @theme inline {
   --color-background: var(--background);
   --color-foreground: var(--foreground);
+  --color-muted: var(--muted);
+  --color-muted-light: var(--muted-light);
+  --color-card: var(--card);
+  --color-card-hover: var(--card-hover);
   --font-sans: var(--font-geist-sans);
   --font-mono: var(--font-geist-mono);
+  --font-serif: var(--font-playfair);
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+* {
+  scroll-behavior: smooth;
 }
 
 body {
   background: var(--background);
   color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: var(--font-geist-sans), system-ui, -apple-system, sans-serif;
+  overflow-x: hidden;
+}
+
+/* Playfair Display for display text */
+.font-serif {
+  font-family: var(--font-playfair), Georgia, serif;
+}
+
+/* Custom scrollbar - minimal style */
+::-webkit-scrollbar {
+  width: 4px;
+}
+
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+  background: rgba(45, 42, 74, 0.3);
+  border-radius: 2px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: rgba(45, 42, 74, 0.5);
+}
+
+/* Animation classes */
+.anim {
+  transition: all 300ms ease;
+}
+
+.anim-slo {
+  transition: all 500ms ease;
+}
+
+.anim-fst {
+  transition: all 150ms ease;
+}
+
+/* Scroll-triggered animation for hero name */
+@keyframes letterReveal {
+  from {
+    opacity: 0;
+    transform: translateY(50px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.letter-animate {
+  display: inline-block;
+  opacity: 0;
+  animation: letterReveal 0.6s ease forwards;
+}
+
+/* Prevent text selection during animations */
+.no-select {
+  user-select: none;
+}
+
+/* Hide scrollbar for certain elements but keep functionality */
+.hide-scrollbar {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
+.hide-scrollbar::-webkit-scrollbar {
+  display: none;
+}
+
+/* Touch-friendly styles for mobile devices */
+button, 
+a, 
+[role="button"],
+[type="button"] {
+  touch-action: manipulation;
+  -webkit-tap-highlight-color: rgba(45, 42, 74, 0.1);
+  cursor: pointer;
+}
+
+/* Prevent long-press menu on mobile */
+* {
+  -webkit-touch-callout: none;
+  -webkit-user-select: none;
+  user-select: none;
+}
+
+/* But allow text selection where needed */
+p, span, h1, h2, h3, h4, h5, h6, li {
+  -webkit-user-select: text;
+  user-select: text;
+}
+
+/* Ensure interactive elements provide visual feedback on touch */
+button:active,
+a:active,
+[role="button"]:active {
+  opacity: 0.7;
+  transition: opacity 0.1s ease;
+}
+
+/* Better touch targets for mobile - minimum 44x44px */
+button, a {
+  min-height: 44px;
+  min-width: 44px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Card shadow matching reference */
+.card-shadow {
+  box-shadow: 0 2px 8px rgba(45, 42, 74, 0.08);
+}
+
+.card-shadow:hover {
+  box-shadow: 0 4px 16px rgba(45, 42, 74, 0.12);
+}
+
+/* Slow spin animation for logo */
+@keyframes spin-slow {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.animate-spin-slow {
+  animation: spin-slow 20s linear infinite;
 }
