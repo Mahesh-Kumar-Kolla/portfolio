@@ -33,7 +33,7 @@ export default function CompetenciesSection() {
       <div className="mx-auto max-w-6xl px-6 md:px-12">
         {/* Section Header - Italic serif like reference */}
         <h2 
-          className="mb-16 text-center font-serif text-4xl italic text-foreground md:text-5xl"
+          className="mb-16 text-center font-serif text-5xl italic text-foreground md:text-6xl lg:text-7xl"
           style={{
             opacity: isVisible ? 1 : 0,
             transform: isVisible ? "translateY(0)" : "translateY(30px)",
@@ -48,14 +48,14 @@ export default function CompetenciesSection() {
           {competencies.map((comp, index) => (
             <div
               key={index}
-              className="group flex h-24 cursor-pointer items-center justify-center rounded-lg bg-card p-4 text-center transition-all duration-300 hover:bg-card-hover card-shadow hover:scale-105"
+              className="group flex h-28 cursor-pointer items-center justify-center rounded-lg bg-card p-4 text-center transition-all duration-300 hover:bg-card-hover card-shadow hover:scale-105"
               style={{
                 opacity: isVisible ? 1 : 0,
                 transform: isVisible ? "translateY(0)" : "translateY(30px)",
                 transition: `all 0.5s ease ${index * 0.05}s`,
               }}
             >
-              <span className="text-sm font-medium text-foreground">
+              <span className="text-base font-medium text-foreground">
                 {comp.title}
               </span>
             </div>

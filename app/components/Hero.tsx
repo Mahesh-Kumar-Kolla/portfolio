@@ -33,7 +33,7 @@ export default function Hero() {
       {/* Content */}
       <div className="relative z-10 flex flex-col items-center gap-2 px-4 text-center">
         {/* Name - Serif font with scroll animation */}
-        <h1 className="font-serif text-7xl font-normal tracking-tight text-foreground md:text-8xl lg:text-9xl">
+        <h1 className="font-serif text-8xl font-normal tracking-tight text-foreground md:text-9xl lg:text-[12rem]">
           {name.split("").map((letter, index) => (
             <span
               key={index}

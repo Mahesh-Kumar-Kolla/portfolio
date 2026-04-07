@@ -62,7 +62,7 @@ export default function ContactSection() {
       <div className="flex flex-col items-center gap-8 px-4 text-center">
         {/* Subtitle */}
         <p 
-          className="font-serif text-xl italic text-muted-light md:text-2xl"
+          className="font-serif text-2xl italic text-muted-light md:text-3xl lg:text-4xl"
           style={{
             opacity: isVisible ? 1 : 0,
             transform: isVisible ? "translateY(0)" : "translateY(20px)",
@@ -82,22 +82,22 @@ export default function ContactSection() {
             transition: "all 0.6s ease 0.2s",
           }}
         >
-          <span className="font-serif text-5xl tracking-tight text-foreground transition-all duration-300 group-hover:opacity-70 md:text-7xl lg:text-8xl">
+          <span className="font-serif text-6xl tracking-tight text-foreground transition-all duration-300 group-hover:opacity-70 md:text-8xl lg:text-9xl">
             CLICK
           </span>
-          <span className="flex h-12 w-12 items-center justify-center rounded-full bg-foreground text-background transition-all duration-300 group-hover:scale-110 md:h-16 md:w-16">
-            <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6 md:h-8 md:w-8" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+          <span className="flex h-14 w-14 items-center justify-center rounded-full bg-foreground text-background transition-all duration-300 group-hover:scale-110 md:h-20 md:w-20">
+            <svg xmlns="http://www.w3.org/2000/svg" className="h-7 w-7 md:h-10 md:w-10" fill="none" viewBox="0 0 24 24" stroke="currentColor">
               <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/>
             </svg>
           </span>
-          <span className="font-serif text-5xl tracking-tight text-foreground transition-all duration-300 group-hover:opacity-70 md:text-7xl lg:text-8xl">
+          <span className="font-serif text-6xl tracking-tight text-foreground transition-all duration-300 group-hover:opacity-70 md:text-8xl lg:text-9xl">
             HERE
           </span>
         </a>
 
         {/* Social Icons Row */}
         <div 
-          className="mt-16 flex items-center gap-6"
+          className="mt-16 flex items-center gap-8"
           style={{
             opacity: isVisible ? 1 : 0,
             transform: isVisible ? "translateY(0)" : "translateY(20px)",
@@ -108,7 +108,7 @@ export default function ContactSection() {
             <a
               key={link.name}
               href={link.href}
-              className="flex h-12 w-12 items-center justify-center rounded-full text-foreground transition-all duration-300 hover:scale-110 hover:opacity-70"
+              className="flex h-14 w-14 items-center justify-center rounded-full text-foreground transition-all duration-300 hover:scale-110 hover:opacity-70"
               aria-label={link.name}
             >
               {link.icon}

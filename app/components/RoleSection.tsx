@@ -71,7 +71,7 @@ export default function RoleSection() {
       {/* Content */}
       <div className="relative z-10 flex flex-col items-center gap-4 px-4 text-center">
         <p 
-          className="font-serif text-lg italic text-muted-light md:text-xl"
+          className="font-serif text-xl italic text-muted-light md:text-2xl lg:text-3xl"
           style={{
             opacity: isVisible ? 1 : 0,
             transform: isVisible ? "translateY(0)" : "translateY(20px)",
@@ -82,11 +82,11 @@ export default function RoleSection() {
         </p>
 
         {/* Role with switch animation */}
-        <div className="relative h-24 overflow-hidden md:h-32">
+        <div className="relative h-28 overflow-hidden md:h-40 lg:h-48">
           {roles.map((role, index) => (
             <h2
               key={role}
-              className="font-serif text-6xl font-normal tracking-tight text-foreground md:text-7xl lg:text-8xl"
+              className="font-serif text-7xl font-normal tracking-tight text-foreground md:text-8xl lg:text-9xl"
               style={{
                 position: index === currentRole ? "relative" : "absolute",
                 opacity: index === currentRole && isVisible ? 1 : 0,
@@ -124,7 +124,7 @@ export default function RoleSection() {
 
         {/* Tagline */}
         <p 
-          className="mt-8 font-serif text-2xl italic text-muted-light md:text-3xl"
+          className="mt-8 font-serif text-3xl italic text-muted-light md:text-4xl lg:text-5xl"
           style={{
             opacity: isVisible ? 1 : 0,
             transform: isVisible ? "translateY(0)" : "translateY(20px)",

@@ -47,7 +47,7 @@ export default function ProfileSection() {
                   key={tab}
                   type="button"
                   onClick={() => setActiveTab(tab)}
-                  className={`relative px-1 py-3 text-base transition-all duration-300 ${
+                  className={`relative px-1 py-3 text-lg transition-all duration-300 ${
                     activeTab === tab
                       ? "text-foreground"
                       : "text-muted hover:text-foreground"
@@ -56,7 +56,7 @@ export default function ProfileSection() {
                   {tab === "CV" && (
                     <svg
                       xmlns="http://www.w3.org/2000/svg"
-                      className="mr-1 inline h-4 w-4"
+                      className="mr-1 inline h-5 w-5"
                       fill="none"
                       viewBox="0 0 24 24"
                       stroke="currentColor"
@@ -82,14 +82,14 @@ export default function ProfileSection() {
               {/* Skills Tab */}
               {activeTab === "Skills" && (
                 <div className="flex flex-col gap-4">
-                  <h3 className="font-serif text-2xl text-foreground">
+                  <h3 className="font-serif text-3xl text-foreground">
                     Technical Skills
                   </h3>
                   <div className="flex flex-wrap gap-3">
                     {skills.map((skill) => (
                       <span
                         key={skill.name}
-                        className="rounded-lg bg-card px-4 py-2 text-sm text-foreground transition-all duration-300 hover:bg-card-hover card-shadow"
+                        className="rounded-lg bg-card px-5 py-3 text-base text-foreground transition-all duration-300 hover:bg-card-hover card-shadow"
                       >
                         {skill.name}
                       </span>
@@ -101,7 +101,7 @@ export default function ProfileSection() {
               {/* Education Tab */}
               {activeTab === "Education" && (
                 <div className="flex flex-col gap-6">
-                  <h3 className="font-serif text-2xl italic text-foreground">
+                  <h3 className="font-serif text-3xl italic text-foreground">
                     Education Background
                   </h3>
                   {education.map((edu, index) => (
@@ -109,11 +109,11 @@ export default function ProfileSection() {
                       key={index}
                       className="border-l-2 border-foreground pl-4"
                     >
-                      <h4 className="text-lg font-medium text-foreground">
+                      <h4 className="text-xl font-medium text-foreground">
                         {edu.degree}
                       </h4>
-                      <p className="text-muted">{edu.institution}</p>
-                      <p className="text-sm text-muted-light">{edu.year}</p>
+                      <p className="text-lg text-muted">{edu.institution}</p>
+                      <p className="text-base text-muted-light">{edu.year}</p>
                     </div>
                   ))}
                 </div>
@@ -125,18 +125,18 @@ export default function ProfileSection() {
                   {experience.map((exp, index) => (
                     <div key={index} className="flex gap-4">
                       {/* Number badge */}
-                      <div className="flex h-8 w-8 flex-shrink-0 items-center justify-center rounded-full border border-muted text-sm text-muted">
+                      <div className="flex h-10 w-10 flex-shrink-0 items-center justify-center rounded-full border border-muted text-base text-muted">
                         {index + 1}
                       </div>
                       {/* Card */}
                       <div className="flex-1 rounded-lg bg-card p-5 transition-all duration-300 hover:bg-card-hover card-shadow">
-                        <h4 className="text-lg font-semibold text-foreground">
+                        <h4 className="text-xl font-semibold text-foreground">
                           {exp.role}
                         </h4>
-                        <p className="font-medium text-foreground">{exp.company}</p>
-                        <p className="text-sm text-muted-light">{exp.period}</p>
+                        <p className="text-lg font-medium text-foreground">{exp.company}</p>
+                        <p className="text-base text-muted-light">{exp.period}</p>
                         {exp.achievements && exp.achievements.length > 0 && (
-                          <p className="mt-2 text-sm text-muted">
+                          <p className="mt-2 text-base text-muted">
                             {exp.achievements[0]}
                           </p>
                         )}
@@ -149,16 +149,16 @@ export default function ProfileSection() {
               {/* CV Tab */}
               {activeTab === "CV" && (
                 <div className="flex flex-col items-center justify-center gap-6 py-12">
-                  <p className="text-center text-muted">
+                  <p className="text-center text-lg text-muted">
                     Download my complete resume to learn more about my experience
                   </p>
                   <a
                     href="#"
-                    className="flex items-center gap-2 rounded-lg bg-foreground px-6 py-3 text-background transition-all duration-300 hover:opacity-90"
+                    className="flex items-center gap-2 rounded-lg bg-foreground px-8 py-4 text-lg text-background transition-all duration-300 hover:opacity-90"
                   >
                     <svg
                       xmlns="http://www.w3.org/2000/svg"
-                      className="h-5 w-5"
+                      className="h-6 w-6"
                       fill="none"
                       viewBox="0 0 24 24"
                       stroke="currentColor"
